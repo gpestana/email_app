@@ -1,0 +1,21 @@
+#requirements & flow
+
+##flow
+1. app receives a html page and metadata through POST request
+2. app converts webpage into PDF
+3. app sends output to email in metadata
+
+
+#stack
+node
+- express (server and endpoint for app)
+- emailjs [https://github.com/eleith/emailjs] (send e-mail)
+- phantomjs 
+
+networking
+- SMTP server 
+
+
+docs:
+
+PDF and phantom: http://www.feedhenry.com/server-side-pdf-generation-node-js/
