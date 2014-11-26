@@ -1,0 +1,27 @@
+{
+  "name": "email_app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "emailjs": "^0.3.12",
+    "express": "^4.10.4",
+    "node-phantom": "^0.2.5",
+    "phantom": "^0.7.0",
+    "phantomjs": "^1.9.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gpestana/email_app.git"
+  },
+  "author": "gpestana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gpestana/email_app/issues"
+  },
+  "homepage": "https://github.com/gpestana/email_app"
+}
