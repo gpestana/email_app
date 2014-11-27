@@ -5,17 +5,5 @@
 2. app converts webpage into PDF
 3. app sends output to email in metadata
 
-
-#stack
-node
-- express (server and endpoint for app)
-- emailjs [https://github.com/eleith/emailjs] (send e-mail)
-- phantomjs 
-
-networking
-- SMTP server 
-
-
-docs:
-
+#doc stack
 PDF and phantom: http://www.feedhenry.com/server-side-pdf-generation-node-js/
