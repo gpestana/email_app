@@ -7,3 +7,4 @@
 
 #doc stack
 PDF and phantom: http://www.feedhenry.com/server-side-pdf-generation-node-js/
+phantomjs and node on heroku: https://discussion.heroku.com/t/running-a-headless-browser-on-heroku/97/2
