@@ -5,14 +5,11 @@ disk        = require('./lib/disk.js')
 
 var msg_bounds = "HTML>"
 
-
 var app = function() {
   console.log("[main] starting ")
 
   hook.connect(function(raw_data) {
     var data = raw_data.split(msg_bounds)
-
-    //console.log(data)
 
     if(data[1]) {
       console.log("[main] incoming data ")
