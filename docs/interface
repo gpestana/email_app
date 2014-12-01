@@ -1,0 +1,19 @@
+INTERFACE
+
+meta_delimiters(<meta></meta>) 
+  <dest_mail> destination_address </dest_mail>
+  <nationality> US or EUR </nationality>
+ 
+mail_delimiters:
+  <mail> html to be converted in pdf and sent</mail>
+
+ex:
+
+<meta>
+  <dest_mail>client@itsmail.om</dest_mail>
+  <nationality>EU</nationality>
+</meta>
+
+<mail>
+  <html>...</html>
+</mail>
