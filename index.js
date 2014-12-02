@@ -40,7 +40,7 @@ var app = function() {
   }
   var sendMail = function(data) {
     var attachment = {
-      path: "./tmp/"+data.filename+".pdf",
+      path: "/tmp/"+data.filename+".pdf",
       type: "pdf",
       name: "attachment.pdf"
     }
