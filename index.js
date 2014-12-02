@@ -14,7 +14,9 @@ server.get('/logs', function(req, res){
   console.log("[web] logs requested")
   res.send("Logs requested")
 })
-
+server.get('/ping', function(req, res){
+  res.send("pong")
+})
 
 var app = function() {
   console.log("[main] server started ")
