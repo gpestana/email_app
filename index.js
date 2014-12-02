@@ -1,8 +1,20 @@
-var email   = require('./lib/smtp.js'),
+var express = require('express'), 
+http        = require('http'),
+
+email       = require('./lib/smtp.js'),
 pdf         = require('./lib/pdf_converter.js'),
 hook        = require('./lib/hook.js'),
 disk        = require('./lib/disk.js'),
 parser      = require('./lib/parser.js')
+
+//webserver interface
+server = express()
+server.listen(process.env.PORT || 3030)
+server.get('/logs', function(req, res){
+  console.log("[web] logs requested")
+  res.send("Logs requested")
+})
+
 
 var app = function() {
   console.log("[main] server started ")
