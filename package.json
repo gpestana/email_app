@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "emailjs": "^0.3.12",
+    "express": "^4.10.4",
     "node-phantom": "^0.2.5",
     "phantom": "^0.7.0",
     "phantomjs": "^1.9.12",
