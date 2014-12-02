@@ -1,41 +1,44 @@
 var email   = require('./lib/smtp.js'),
 pdf         = require('./lib/pdf_converter.js'),
 hook        = require('./lib/hook.js'),
-disk        = require('./lib/disk.js')
-
-var msg_bounds = "HTML>"
+disk        = require('./lib/disk.js'),
+parser      = require('./lib/parser.js')
 
 var app = function() {
-  console.log("[main] starting ")
+  console.log("[main] server started ")
 
   hook.connect(function(raw_data) {
-    var data = raw_data.split(msg_bounds)
-
-    if(data[1]) {
-      console.log("[main] incoming data ")
- 
-      disk.write(data[1], function(filename) {
-
-        pdf.convertPDF(filename, function(err){
-          if(err) console.log("[main] err @ converterPDF")
-          else {
-            var attachment = {
-              path:"data/pdf/"+filename+".pdf",
-              type:"pdf", 
-              name: "attachment.pdf"
-              }
- 
-            email.send("g6pestana@gmail.com", attachment, 
-              function(err, msg){
-                if(err) console.log("[main] err @ email: "+err)
-                else console.log("[main] DONE") 
-              })  
-          }
-        }) 
-      })  
-    }
+    parser.load(raw_data, function(data) {
+      if(data) writeHtml(data)
+      else console.log("[main] mail not properly formated received")
+    })
   })
-}
 
+
+  //private functions
+  var writeHtml = function(data) {
+    console.log("\n"+data.ts+" process started")
+    disk.write(data, convertPDF)
+  }
+  var convertPDF = function(data) {
+    pdf.convertPDF(data, function(err) {
+      if(err) console.log("[main] err @ convertPDF: "+err)
+      else sendMail(data)
+    })
+  }
+  var sendMail = function(data) {
+    var attachment = {
+      path: "data/pdf/"+data.filename+".pdf",
+      type: "pdf",
+      name: "attachment.pdf"
+    }
+    
+    email.send(data, attachment, function(err, msg){
+      if(err) console.log("[main] err @ email: "+err)
+      else console.log(data.ts+" process concluded\n")
+    })
+  }
+
+}
 
 app()

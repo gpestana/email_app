@@ -1,0 +1,10 @@
+<meta_data>
+  <dest_mail>g6pestana@gmail.com<dest_mail>
+  <origin>EUR<origin>
+<meta_data>
+<mail>
+  <html>
+   <h1>This is a header</h1>
+  <p>And this is a paragraph</p>
+  <html>
+<mail>
