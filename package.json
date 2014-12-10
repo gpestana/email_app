@@ -9,7 +9,9 @@
     "node-phantom": "^0.2.5",
     "phantom": "^0.7.0",
     "phantomjs": "^1.9.12",
-    "imap": "0.8.14"
+    "imap": "0.8.14",
+    "utf8": "*",
+    "quotedPrintable": "*"
   },
   "devDependencies": {},
   "scripts": {
