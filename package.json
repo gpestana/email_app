@@ -11,7 +11,7 @@
     "phantomjs": "^1.9.12",
     "imap": "0.8.14",
     "utf8": "*",
-    "quotedPrintable": "*"
+    "quoted-printable": "*"
   },
   "devDependencies": {},
   "scripts": {
