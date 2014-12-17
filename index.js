@@ -10,10 +10,6 @@ parser      = require('./lib/parser.js')
 //webserver interface
 server = express()
 server.listen(process.env.PORT || 3030)
-server.get('/logs', function(req, res){
-  console.log("[web] logs requested")
-  res.send("Logs requested")
-})
 server.get('/ping', function(req, res){
   res.send("pong")
 })
