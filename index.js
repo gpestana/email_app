@@ -5,7 +5,8 @@ email       = require('./lib/smtp.js'),
 pdf         = require('./lib/pdf_converter.js'),
 hook        = require('./lib/hook.js'),
 disk        = require('./lib/disk.js'),
-parser      = require('./lib/parser.js')
+parser      = require('./lib/parser.js'),
+clean       = require('./lib/clean.js')
 
 //webserver interface
 server = express()
@@ -45,7 +46,12 @@ var app = function() {
     
     email.send(data, attachment, function(err, msg){
       if(err) console.log("[main] err @ email: "+err)
-      else console.log(data.ts+" process concluded\n")
+      else { 
+        clean.up(data.filename, function(err) {
+          if(err) console.log('[main] err @ cleanup: '+err )
+          else console.log(data.ts+" process concluded\n")
+        })
+      }
     })
   }
 
